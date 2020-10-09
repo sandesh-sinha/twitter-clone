@@ -9,7 +9,7 @@ import {connect} from 'react-redux'
 import {getScreams} from '../redux/actions/dataActions'
 class Home extends Component {
     componentDidMount(){
-        this.props.getScreams()
+        this.props.getScreams();
     };
     render(){
         const {screams,  loading} = this.props.data
