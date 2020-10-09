@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles'
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton'
-import Tooltip from '@material-ui/core/Tooltip'
 import EditDetails from './EditDetails'
 import Paper from '@material-ui/core/Paper'
 import MuiLink from '@material-ui/core/Link'
@@ -17,6 +15,7 @@ import LinkIcon from '@material-ui/icons/Link'
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import dayjs from 'dayjs'
 import {logoutUser, uploadImage} from '../redux/actions/userAction'
+import MyButton from '../util/MyButton';
 const styles = (theme) => ({
     ...theme.spreadThis
 });
@@ -44,11 +43,13 @@ class Profile extends Component {
                     <div className="image-wrapper">
                         <img src={imageUrl} alt="profile" className="profile-image"/>
                         <input type="file" id="imageInput" onChange={this.handleImageChange} hidden="hidden"/>
-                        <Tooltip title="Edit profile pictire" placement="top">
+                        {/* <Tooltip title="Edit profile pictire" placement="top">
                             <IconButton onClick={this.handleEditPicture} className="button" >
-                                <EditIcon color="primary" />
                             </IconButton>
-                        </Tooltip>
+                        </Tooltip> */}
+                        <MyButton tip="Edit profile picture" onClick={this.handleEditPicture} btnClassName="button" >
+                            <EditIcon color="primary" />
+                        </MyButton>
                     </div>
                     <hr/>
                     <div className="profile-details">
@@ -81,14 +82,15 @@ class Profile extends Component {
                             Joined {dayjs(createdAt).format('MMM YYYY')}
                         </span>
                     </div>
-                    <Tooltip  title="logout" placement="top">
+                    {/* <Tooltip  title="logout" placement="top">
                         <IconButton onClick={this.handleLogout}>
                             <KeyboardReturn color="primary"/>
                         </IconButton>
-                    </Tooltip>
-                    <EditDetails>
-
-                    </EditDetails>
+                    </Tooltip> */}
+                    <MyButton tip="logout" onClick={this.handleLogout} >
+                            <KeyboardReturn color="primary"/>
+                    </MyButton>
+                    <EditDetails/>
                 </div>
             </Paper>
         ):(

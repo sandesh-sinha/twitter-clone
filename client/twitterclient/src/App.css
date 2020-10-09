@@ -12,3 +12,6 @@ body {
 a{
     text-decoration: None;
 }
+.nav-container svg{
+    color : '#ffffff'
+}
