@@ -35,6 +35,7 @@ const styles = {
 class Scream extends Component {
     
     render(){
+        console.log(this.props.openDialog);
         dayjs.extend(relativeTime);
         const {classes , scream :{ body, createdAt, userImage, userHandle, screamId, likeCount, commentCount }, user: {authenticated, credentials: {handle}}} = this.props;
         

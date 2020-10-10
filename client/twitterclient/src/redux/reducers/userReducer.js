@@ -1,4 +1,11 @@
-import {SET_USER ,LIKE_SCREAM, UNLIKE_SCREAM, DELETE_SCREAMS, SET_ERRORS, CLEAR_ERRORS, LOADING_UI, SET_AUTHENTICATED, SET_UNAUTHENTICATED, LOADING_USER, DELETE_SCREAM} from '../types'
+import {SET_USER ,
+        LIKE_SCREAM, 
+        UNLIKE_SCREAM, 
+        SET_AUTHENTICATED, 
+        SET_UNAUTHENTICATED, LOADING_USER,
+        DELETE_SCREAM,
+        MARK_NOTIFICATIONS_READ
+    } from '../types'
 
 const initialState = {
     authenticated : false, 
@@ -32,6 +39,11 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 likes : state.likes.filter(like => like.screamId !==action.payload)
+            }
+        case MARK_NOTIFICATIONS_READ : 
+            state.notifications.forEach(not => not.read = true);
+            return {
+                ...state
             }
         default : return state;
     }

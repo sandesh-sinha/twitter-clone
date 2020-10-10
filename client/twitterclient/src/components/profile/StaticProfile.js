@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react'
+import React, {Fragment} from 'react'
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles'
 import dayjs from 'dayjs'
@@ -7,7 +7,6 @@ import MuiLink from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography';
 import LocationOn from '@material-ui/icons/LocationOn'
-import EditIcon from '@material-ui/icons/Edit'
 import LinkIcon from '@material-ui/icons/Link'
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 

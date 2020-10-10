@@ -18,19 +18,19 @@ class user extends Component {
         if(screamId){
             this.setState({screamIdParam: screamId});
         }
-        this.props.getUserData(handle);
         axios.get(`/user/${handle}`)
         .then(res=>{
-            console.log(res.data.user);
             this.setState({ profile: res.data.user})
         })
         .catch(err=>{
             console.log(err);
-        })
+        });
+        this.props.getUserData(handle);
     }
     render() {
         const {screams, loading } = this.props.data;
         const {screamIdParam} = this.state;
+        console.log(screamIdParam);
         const screamsMarkup = loading ? (
             <div>Loading data</div>
         ) : screams === null ? (
@@ -39,14 +39,14 @@ class user extends Component {
             screams.map(scream => <Scream key={scream.screamId} scream={scream}/>)
         ) : (
             screams.map(scream =>{
-                if(scream.screamId !==screamIdParam){
-                    return <Scream key={scream.screamId} scream={scream}/>;
+                if(scream.screamId !== screamIdParam){
+                    return <Scream key={scream.screamId} scream={scream}/>
                 }
                 else{
-                    return <Scream key={scream.screamId} scream={scream} openDialog/> ;
+                    return <Scream key={scream.screamId} scream={scream} openDialog={true}/> 
                 }
             })
-        )
+        );
         return (
             <div className="home" >
                 <Grid container spacing={3} >

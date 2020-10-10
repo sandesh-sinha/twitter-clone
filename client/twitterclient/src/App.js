@@ -23,7 +23,6 @@ import Navbar from './components/layout/Navbar'
 import themeFile from './util/theme'
 const theme = createMuiTheme(themeFile);
 
-let authenticated;
 const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecode(token);
@@ -42,7 +41,7 @@ function App(){
   return (
     <MuiThemeProvider theme={theme}>
       <Provider store={store}>
-        <div className="App">
+        <div >
           <Router>
             <Navbar/>
             <div className="Container">

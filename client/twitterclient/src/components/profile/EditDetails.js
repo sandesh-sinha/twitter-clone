@@ -10,7 +10,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import EditIcon from '@material-ui/icons/Edit'
-import { IconButton } from '@material-ui/core';
 import MyButton from '../../util/MyButton'
 
 const styles = (theme) => ({
@@ -58,7 +57,7 @@ class EditDetails extends Component {
         this.mapUserDetailsToState(this.props.user.credentials);
     }
     render() {
-        const {classes, user:{credentials}} = this.props;
+        const {classes} = this.props;
         return (
             <Fragment>
                 {/* <Tooltip title="Edit Details" placement="top">
