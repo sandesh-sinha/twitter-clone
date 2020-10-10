@@ -14,8 +14,9 @@ import EditIcon from '@material-ui/icons/Edit'
 import LinkIcon from '@material-ui/icons/Link'
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import dayjs from 'dayjs'
-import {logoutUser, uploadImage} from '../redux/actions/userAction'
-import MyButton from '../util/MyButton';
+import {logoutUser, uploadImage} from '../../redux/actions/userAction'
+import MyButton from '../../util/MyButton';
+
 const styles = (theme) => ({
     ...theme.spreadThis
 });

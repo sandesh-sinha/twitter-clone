@@ -1,10 +1,8 @@
 import React , {Component, Fragment} from 'react';
-import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 import {connect} from 'react-redux';
-import {editUserDetails} from '../redux/actions/userAction';
-import Tooltip from '@material-ui/core/Tooltip';
+import {editUserDetails} from '../../redux/actions/userAction';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -13,7 +11,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import EditIcon from '@material-ui/icons/Edit'
 import { IconButton } from '@material-ui/core';
-import MyButton from '../util/MyButton'
+import MyButton from '../../util/MyButton'
 
 const styles = (theme) => ({
     ...theme.spreadThis,

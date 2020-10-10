@@ -17,8 +17,9 @@ import {logoutUser, getUserData} from './redux/actions/userAction'
 import Home from './pages/home';
 import Login from './pages/login';
 import Signup from './pages/signup';
+import user from './pages/user'
 // Components
-import Navbar from './components/Navbar'
+import Navbar from './components/layout/Navbar'
 import themeFile from './util/theme'
 const theme = createMuiTheme(themeFile);
 
@@ -49,6 +50,8 @@ function App(){
                 <Route exact path="/" component={Home}></Route>
                 <AuthRoute exact path="/login" component={Login} ></AuthRoute>
                 <AuthRoute exact path="/signup" component={Signup} ></AuthRoute>
+                <Route exact path='/users/:handle' component={user}/>
+                <Route exace path='/users/:handle/scream/:screamId' component={user} />
               </Switch>
             </div>
           </Router>
