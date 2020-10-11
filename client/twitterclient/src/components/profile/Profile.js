@@ -16,7 +16,7 @@ import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import dayjs from 'dayjs'
 import {logoutUser, uploadImage} from '../../redux/actions/userAction'
 import MyButton from '../../util/MyButton';
-
+import ProfileSkeleton from '../../util/ProfileSkeleton'
 const styles = (theme) => ({
     ...theme.spreadThis
 });
@@ -109,7 +109,7 @@ class Profile extends Component {
                     </div>
                 </Typography>
             </Paper>
-        ) ):(<div>Loading...</div>)
+        ) ): <ProfileSkeleton />
         return (
             <div>
                 {profileMarkup}

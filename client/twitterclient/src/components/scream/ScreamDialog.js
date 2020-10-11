@@ -73,6 +73,7 @@ class ScreamDialog extends Component {
         this.props.clearErrors();
     }
     render(){
+        console.log("scream dialog render");
         const {classes, 
                scream : {screamId, body, createdAt, likeCount, commentCount , userImage, userHandle, comments}, 
                UI:{ loading}} = this.props
@@ -112,7 +113,7 @@ class ScreamDialog extends Component {
         )
         return (
             <Fragment>
-                <MyButton onClick={this.handleOpen} tip="Expand Scream" tipClassName={classes.expandButton}>
+                <MyButton onClick={this.handleOpen} tip="ExpandScream" tipClassName={classes.expandButton}>
                     <UnfoldMore color='primary'/>
                 </MyButton>
                 <Dialog open={this.state.open} onClose={this.handleClose} fullWidth maxWidth="sm">
