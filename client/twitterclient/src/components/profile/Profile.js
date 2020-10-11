@@ -109,7 +109,7 @@ class Profile extends Component {
                     </div>
                 </Typography>
             </Paper>
-        ) ): <ProfileSkeleton />
+        ) ): (<ProfileSkeleton />)
         return (
             <div>
                 {profileMarkup}

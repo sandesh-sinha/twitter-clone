@@ -16,7 +16,7 @@ class Home extends Component {
         let recentScreamsMarkup = !loading ? (
         screams.map( (scream)=>
                          <Scream key={scream.screamId} scream={scream}/>)
-        ): <ScreamSkeleton />
+        ): (<ScreamSkeleton />)
         return (
             <div className="home" >
                 <Grid container spacing={3} >

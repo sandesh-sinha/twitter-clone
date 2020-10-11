@@ -8,6 +8,7 @@ import {getUserData} from '../redux/actions/dataActions';
 import StaticProfile from '../components/profile/StaticProfile'
 import ProfileSkeleton from '../util/ProfileSkeleton'
 import ScreamSkeleton from '../util/ScreamSkeleton'
+
 class user extends Component {
     state = {
         profile : null,
